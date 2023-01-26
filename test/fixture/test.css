@@ -1,0 +1,21 @@
+@charset "utf-8";
+.green-label {
+    border: 1px solid green;
+    border-left-width: 10px;
+    padding: 1px 3px;
+}
+body {
+    counter-reset: sheet; /* カウンタの初期化 */
+}
+
+.sheet::after {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size:10px;
+    counter-increment: sheet;
+    content: "ページ " counter(sheet);
+}
+table {
+    border: 1px solid black; /* 1pxが最小 */
+}
